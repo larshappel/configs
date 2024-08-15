@@ -83,6 +83,13 @@ source $ZSH/oh-my-zsh.sh
 source ~/.oh-my-zsh/zsh-z/zsh-z.plugin.zsh
 
 # User configuration
+alias vi="nvim"
+alias sel="kitten @ launch --stdin-source=@screen_scrollback --type=overlay nvim"
+
+export PATH="$HOME/OnThePath/:$PATH"
+export PATH="$HOME/.tmuxifier/bin/:$PATH"
+
+eval "$(tmuxifier init -)"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

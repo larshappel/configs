@@ -19,7 +19,10 @@ if true then return {
     { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
     { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
   },
-}
+},
+
+   { 'glacambre/firenvim', build = ":call firenvim#install(0)" }
+
 
 } end
 

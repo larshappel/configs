@@ -57,3 +57,19 @@ And install the same thing for vim..?
 ### Tmuxifier
 
 git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
+
+## Other useful tools
+
+* Tree
+* Ncdu
+* fd
+* fzf
+* yazi
+* fish
+* nvim
+* tldr
+* bat
+
+## LazyVim
+
+Just copy the config folder?
