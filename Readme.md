@@ -53,3 +53,7 @@ $ tmux source .tmux.conf
 https://github.com/christoomey/vim-tmux-navigator
 
 And install the same thing for vim..?
+
+### Tmuxifier
+
+git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier
