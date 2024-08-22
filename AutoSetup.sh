@@ -26,6 +26,9 @@ echo "source ~/.oh-my-zsh/zsh-z/zsh-z.plugin.zsh" >>$HOME/.zshrc
 
 source .zshrc
 
+mv $HOME/.zshrc backup.zshrc
+mv .zshrc $HOME/.zshrc
+
 ######## Tmux  Stuff... ########
 
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
