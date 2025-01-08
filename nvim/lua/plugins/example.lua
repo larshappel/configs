@@ -1,36 +1,22 @@
 -- since this is just an example spec, don't actually load anything here and return an empty spec
 -- stylua: ignore
-if true then return {
-
-
-{
-  "christoomey/vim-tmux-navigator",
-  cmd = {
-    "TmuxNavigateLeft",
-    "TmuxNavigateDown",
-    "TmuxNavigateUp",
-    "TmuxNavigateRight",
-    "TmuxNavigatePrevious",
-  },
-  keys = {
-    { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
-    { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
-    { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
-    { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
-    { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
-  },
-},
-
-   { 'glacambre/firenvim', build = ":call firenvim#install(0)" }
-
-
-} end
 
 -- every spec file under the "plugins" directory will be loaded automatically by lazy.nvim
 --
 -- In your plugin files, you can:
 -- * add extra plugins
 -- * disable/enabled LazyVim plugins
+
+if true then return {
+  { "oahlen/iceberg.nvim"},
+  { "ellisonleao/gruvbox.nvim"},
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  { "jwalton512/vim-blade"},
+} end
+
+if true then
+  return {}
+end
 -- * override the configuration of LazyVim plugins
 return {
   -- add gruvbox

@@ -10,12 +10,13 @@ fi
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export LC_CTYPE=ja_JP.UTF-8
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -80,16 +81,9 @@ export ZSH="$HOME/.oh-my-zsh"
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.oh-my-zsh/zsh-z/zsh-z.plugin.zsh
+source $HOME/zsh-z/zsh-z.plugin.zsh
 
 # User configuration
-alias vi="nvim"
-alias sel="kitten @ launch --stdin-source=@screen_scrollback --type=overlay nvim"
-
-export PATH="$HOME/OnThePath/:$PATH"
-export PATH="$HOME/.tmuxifier/bin/:$PATH"
-
-eval "$(tmuxifier init -)"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -97,14 +91,24 @@ eval "$(tmuxifier init -)"
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 # Compilation flags
-# export ARCHFLAGS="-arch $(uname -m)"
+# export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
@@ -117,7 +121,34 @@ eval "$(tmuxifier init -)"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/xerographixoffice/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/xerographixoffice/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/xerographixoffice/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/xerographixoffice/google-cloud-sdk/completion.zsh.inc'; fi
+
+# For multiprocessing (python function-framework)
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+# Herd injected NVM configuration
+export NVM_DIR="/Users/xerographixoffice/Library/Application Support/Herd/config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/xerographixoffice/Library/Application Support/Herd/config/php/83/"
+
+
+# Herd injected PHP binary.
+export PATH="/Users/xerographixoffice/Library/Application Support/Herd/bin/":$PATH
