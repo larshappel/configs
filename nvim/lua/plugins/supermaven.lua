@@ -1,0 +1,13 @@
+-- lua/plugins/supermaven-nvim.lua
+--
+-- return {
+--   {
+--     "supermaven-inc/supermaven-nvim",
+--     config = function()
+--       require("supermaven-nvim").setup({
+--         accept_suggestion = "<C-j>",
+--         accept_word = "<C-h>",
+--       })
+--     end,
+--   },
+-- }
