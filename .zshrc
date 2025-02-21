@@ -152,3 +152,14 @@ export HERD_PHP_83_INI_SCAN_DIR="/Users/xerographixoffice/Library/Application Su
 
 # Herd injected PHP binary.
 export PATH="/Users/xerographixoffice/Library/Application Support/Herd/bin/":$PATH
+
+# Use fzf for fuzzy search of command history (deduplicated)
+fzf-history-widget() {
+  BUFFER=$(history -n 1 | tac | sort -u | fzf --height 40% --border --ansi)
+  CURSOR=$#BUFFER
+  zle redisplay
+}
+
+zle -N fzf-history-widget
+bindkey '^R' fzf-history-widget
+

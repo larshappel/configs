@@ -5,3 +5,4 @@ vim.opt.relativenumber = false
 
 vim.g.lazyvim_python_lsp = "pyright"
 vim.g.lazyvim_python_ruff = "ruff"
+vim.g.lazyvim_php_lsp = "intelephense"

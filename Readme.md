@@ -76,3 +76,8 @@ git clone <https://github.com/jimeh/tmuxifier.git> ~/.tmuxifier
 ## LazyVim
 
 Just copy the config folder?
+
+Do yourself a favor and use intelephense for PHP. In `options.lua` it's just
+`vim.g.lazyvim_php_lsp = "intelephense"` and then in lua/config/lsp.lua the
+things from this config repo.
+It's a lot better than phpactor which comes with LazyVim.
