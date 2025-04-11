@@ -81,3 +81,9 @@ Do yourself a favor and use intelephense for PHP. In `options.lua` it's just
 `vim.g.lazyvim_php_lsp = "intelephense"` and then in lua/config/lsp.lua the
 things from this config repo.
 It's a lot better than phpactor which comes with LazyVim.
+
+## PHPCS
+
+There's a hidden file, `.phpcs.xml` in the root directory.
+It contains settings to make the PHP linter/formatter a little bit less
+annoying by increasing the line length at which it starts complaining.
