@@ -87,3 +87,17 @@ It's a lot better than phpactor which comes with LazyVim.
 There's a hidden file, `.phpcs.xml` in the root directory.
 It contains settings to make the PHP linter/formatter a little bit less
 annoying by increasing the line length at which it starts complaining.
+
+This will also remove all the other formatting errors regarding brackets, since
+they're not part of the custom ruleset!
+
+## Dungeon Crawl
+
+Is it important? No. But:
+In the Dungeon Crawl - Console directory, `Resources/settings`
+there is the `init.txt` file on Mac OS.
+Here, add `use_terminal_default_colours = true` and it'll have the right colors
+even in kitty terminal. Also, run the `crawl` file from `Resources/`, not the
+file with the long name in the `MacOS/` directory.
+
+Source: <https://tavern.dcss.io/t/solved-color-scheme-likely-a-foreground-issue/669>
