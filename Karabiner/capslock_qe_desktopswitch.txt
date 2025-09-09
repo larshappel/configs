@@ -1,0 +1,37 @@
+{
+    "description": "CAPS_LOCK + q & e to switch desktop",
+    "manipulators": [
+        {
+            "from": {
+                "key_code": "q",
+                "modifiers": {
+                    "mandatory": ["left_shift", "left_command", "left_control", "left_option"],
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "left_arrow",
+                    "modifiers": "right_control"
+                }
+            ],
+            "type": "basic"
+        },
+        {
+            "from": {
+                "key_code": "e",
+                "modifiers": {
+                    "mandatory": ["left_shift", "left_command", "left_control", "left_option"],
+                    "optional": ["any"]
+                }
+            },
+            "to": [
+                {
+                    "key_code": "right_arrow",
+                    "modifiers": "right_control"
+                }
+            ],
+            "type": "basic"
+        }
+    ]
+}
