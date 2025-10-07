@@ -44,12 +44,13 @@ Will open up the color scheme selector.
 
 ## Tmux
 
-Install Tmux Plugin manager
-
+1. Install Tmux Plugin manager
 git clone <https://github.com/tmux-plugins/tpm> ~/.tmux/plugins/tpm
-
-Inside tmux,
+2. Copy over the `.tmux.conf`
+3. Inside tmux:
 $ tmux source .tmux.conf
+or just
+leader -> Shift-I (install and reload)
 
 ### Vim-tmux navigator
 
