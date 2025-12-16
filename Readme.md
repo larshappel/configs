@@ -78,6 +78,14 @@ git clone <https://github.com/jimeh/tmuxifier.git> ~/.tmuxifier
 
 Just copy the config folder?
 
+It might be necessary to install "build-essential"
+`sudo apt install build-essential`
+this is to be able to compile c for some of the addons.
+Note that stuff like "fzf" also needs to be installed. It's a program that Nvim relies on.
+
+After this you'll need to install your necessary language server.
+`:Mason` in nvim gives a list.
+
 Do yourself a favor and use intelephense for PHP. In `options.lua` it's just
 `vim.g.lazyvim_php_lsp = "intelephense"` and then in lua/config/lsp.lua the
 things from this config repo.
