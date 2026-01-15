@@ -91,6 +91,9 @@ Do yourself a favor and use intelephense for PHP. In `options.lua` it's just
 things from this config repo.
 It's a lot better than phpactor which comes with LazyVim.
 
+## Xserver
+Refer to [the xserveraccess guide](xserveraccess.md)
+
 ## PHPCS
 
 There's a hidden file, `.phpcs.xml` in the root directory.
