@@ -5,6 +5,14 @@ type: bug
 status: open
 created_date: 2026-01-15
 ---
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
  
 ///SSH 
 `ssh -l kcsweb -i ~/.ssh/kcsweb.key sv14783.xserver.jp -p 10022`
